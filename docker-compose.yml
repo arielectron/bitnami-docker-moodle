@@ -8,7 +8,7 @@ services:
       - MARIADB_PASSWORD=changeit
       - MARIADB_ROOT_PASSWORD=changeit
     volumes:
-      - 'mariadb_data:/bitnami'
+      - '/var/lib/docker/volumes/[container name]mariadb_data/_data:/bitnami'
   moodle:
     image: 'bitnami/moodle:3'
     environment:
@@ -18,11 +18,6 @@ services:
       - MOODLE_DATABASE_NAME=moodle
       - MOODLE_DATABASE_PASSWORD=changeit
     volumes:
-      - 'moodle_data:/bitnami'
+      - '/var/lib/docker/volumes/[container name]moodle_data/_data:/bitnami'
     depends_on:
       - mariadb
-volumes:
-  mariadb_data:
-    driver: local
-  moodle_data:
-    driver: local
