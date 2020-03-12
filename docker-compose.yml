@@ -6,6 +6,7 @@ services:
       - MARIADB_USER=bn_moodle
       - MARIADB_DATABASE=moodle
       - MARIADB_PASSWORD=changeit
+      - MARIADB_ROOT_PASSWORD=changeit
     volumes:
       - 'mariadb_data:/bitnami'
   moodle:
